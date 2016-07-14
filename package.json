@@ -22,4 +22,7 @@
     "url": "https://github.com/AndrewHaine/GetCoords/issues"
   },
   "homepage": "https://github.com/AndrewHaine/GetCoords/",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
 }

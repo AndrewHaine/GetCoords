@@ -20,7 +20,7 @@ body
   display: flex
   flex-direction: column
 .map-screen
-  background: green
+  background: url('https://www.advancedcustomfields.com/wp-content/uploads/2013/11/acf-google-maps-field-2.png')
   flex-grow: 24
 .google
   flex-grow: 1
@@ -90,7 +90,60 @@ body
     transform: translate(0px, 0px)
   &:focus
     outline: 0
-.input-outer
+.input-outer.open
+  height: 40px
+  width: 100%
+  cursor: pointer
+  background: #fbfbfb
+  border: 3px solid #f6f6f6
+  box-sizing: border-box
+  border-radius: 300px
+  flex: 1
+  transition: all 0.3s ease-in-out
+  display: flex
+  margin-top: 14px
+  margin-bottom: 14px
+  align-items: center
+  padding-left: 20px
+  .plus-line
+    height: 0px
+    top: 18px
+    transition: all 0.2s ease-in-out
+  .search-label
+    font-family: 'Lato', sans-serif
+    color: #ccc
+    font-weight: 300
+    font-size: 15pt
+    display: block
+    cursor: pointer
+    opacity: 1
+    transition: all 0.3s ease-in-out
+  .place-input
+    background: none
+    outline: none
+    border: none
+    height: 100%
+    z-index: 100
+    padding-left: 20px
+    color: #ccc
+    margin-left: 10px
+    border-left: 3px #f6f6f6 solid
+    width: 100%
+    font-family: 'Lato', sans-serif
+    color: #ccc
+    font-size: 15pt
+    font-weight: 300
+    display: block
+    vertical-align: middle
+    opacity: 1
+    transition: all 0.3s ease-in-out
+    &::placeholder
+      font-family: 'Lato', sans-serif
+      color: #ccc
+      font-size: 15pt
+      vertical-align: middle
+      font-weight: 300
+.input-outer-first
   height: 40px
   width: 100%
   background: #fbfbfb
@@ -130,6 +183,42 @@ body
       font-size: 15pt
       vertical-align: middle
       font-weight: 300
+
+.closed
+  position: relative
+  width: 40px
+  height: 40px
+  transition: all 0.3s ease-in-out
+  background: #fbfbfb
+  border: 3px solid #f6f6f6
+  box-sizing: border-box
+  border-radius: 50px
+  cursor: pointer
+  flex: 1
+  overflow: hidden
+  display: flex
+  margin-top: 14px
+  margin-bottom: 14px
+  align-items: center
+  padding-left: 20px
+  .place-input
+    background: none
+    outline: none
+    border: none
+    border-left: 3px #f6f6f6 solid
+    font-family: 'Lato', sans-serif
+    color: #ccc
+    font-size: 15pt
+    font-weight: 300
+    opacity: 0
+    transition: all 0.3s ease-in-out
+  .search-label
+    font-family: 'Lato', sans-serif
+    color: #ccc
+    font-weight: 300
+    font-size: 15pt
+    opacity: 0
+    transition: all 0.3s ease-in-out
 .result-panel
   width: 98%
   margin: 0 auto
@@ -192,3 +281,17 @@ body
   color: #8f8f8f
   font-family: 'Lato', sans-serif
   cursor: text
+.closed
+  .plus-line
+    position: absolute
+    width: 3px
+    background-color: #cccccc
+    height: 24px
+    left: 16px
+    top: 5px
+    transition: all 0.2s ease-in-out
+    &:nth-child(1)
+      transform: rotate(90deg)
+  &:hover
+    .plus-line
+      transform: rotate(90deg)

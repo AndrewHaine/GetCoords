@@ -26,7 +26,7 @@ body {
       flex-direction: column; }
 
 .map-screen {
-  background: green;
+  background: url("https://www.advancedcustomfields.com/wp-content/uploads/2013/11/acf-google-maps-field-2.png");
   -ms-flex-positive: 24;
       flex-grow: 24; }
 
@@ -115,7 +115,82 @@ body {
   .go-button:focus {
     outline: 0; }
 
-.input-outer {
+.input-outer.open {
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+  background: #fbfbfb;
+  border: 3px solid #f6f6f6;
+  box-sizing: border-box;
+  border-radius: 300px;
+  -ms-flex: 1;
+      flex: 1;
+  transition: all 0.3s ease-in-out;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 20px; }
+  .input-outer.open .plus-line {
+    height: 0px;
+    top: 18px;
+    transition: all 0.2s ease-in-out; }
+  .input-outer.open .search-label {
+    font-family: 'Lato', sans-serif;
+    color: #ccc;
+    font-weight: 300;
+    font-size: 15pt;
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s ease-in-out; }
+  .input-outer.open .place-input {
+    background: none;
+    outline: none;
+    border: none;
+    height: 100%;
+    z-index: 100;
+    padding-left: 20px;
+    color: #ccc;
+    margin-left: 10px;
+    border-left: 3px #f6f6f6 solid;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    color: #ccc;
+    font-size: 15pt;
+    font-weight: 300;
+    display: block;
+    vertical-align: middle;
+    opacity: 1;
+    transition: all 0.3s ease-in-out; }
+    .input-outer.open .place-input::-webkit-input-placeholder {
+      font-family: 'Lato', sans-serif;
+      color: #ccc;
+      font-size: 15pt;
+      vertical-align: middle;
+      font-weight: 300; }
+    .input-outer.open .place-input::-moz-placeholder {
+      font-family: 'Lato', sans-serif;
+      color: #ccc;
+      font-size: 15pt;
+      vertical-align: middle;
+      font-weight: 300; }
+    .input-outer.open .place-input:-ms-input-placeholder {
+      font-family: 'Lato', sans-serif;
+      color: #ccc;
+      font-size: 15pt;
+      vertical-align: middle;
+      font-weight: 300; }
+    .input-outer.open .place-input::placeholder {
+      font-family: 'Lato', sans-serif;
+      color: #ccc;
+      font-size: 15pt;
+      vertical-align: middle;
+      font-weight: 300; }
+
+.input-outer-first {
   height: 40px;
   width: 100%;
   background: #fbfbfb;
@@ -131,12 +206,12 @@ body {
   -ms-flex-align: center;
       align-items: center;
   padding-left: 20px; }
-  .input-outer .search-label {
+  .input-outer-first .search-label {
     font-family: 'Lato', sans-serif;
     color: #ccc;
     font-weight: 300;
     font-size: 15pt; }
-  .input-outer .place-input {
+  .input-outer-first .place-input {
     background: none;
     outline: none;
     border: none;
@@ -152,30 +227,69 @@ body {
     font-size: 15pt;
     font-weight: 300;
     vertical-align: middle; }
-    .input-outer .place-input::-webkit-input-placeholder {
+    .input-outer-first .place-input::-webkit-input-placeholder {
       font-family: 'Lato', sans-serif;
       color: #ccc;
       font-size: 15pt;
       vertical-align: middle;
       font-weight: 300; }
-    .input-outer .place-input::-moz-placeholder {
+    .input-outer-first .place-input::-moz-placeholder {
       font-family: 'Lato', sans-serif;
       color: #ccc;
       font-size: 15pt;
       vertical-align: middle;
       font-weight: 300; }
-    .input-outer .place-input:-ms-input-placeholder {
+    .input-outer-first .place-input:-ms-input-placeholder {
       font-family: 'Lato', sans-serif;
       color: #ccc;
       font-size: 15pt;
       vertical-align: middle;
       font-weight: 300; }
-    .input-outer .place-input::placeholder {
+    .input-outer-first .place-input::placeholder {
       font-family: 'Lato', sans-serif;
       color: #ccc;
       font-size: 15pt;
       vertical-align: middle;
       font-weight: 300; }
+
+.closed {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease-in-out;
+  background: #fbfbfb;
+  border: 3px solid #f6f6f6;
+  box-sizing: border-box;
+  border-radius: 50px;
+  cursor: pointer;
+  -ms-flex: 1;
+      flex: 1;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 20px; }
+  .closed .place-input {
+    background: none;
+    outline: none;
+    border: none;
+    border-left: 3px #f6f6f6 solid;
+    font-family: 'Lato', sans-serif;
+    color: #ccc;
+    font-size: 15pt;
+    font-weight: 300;
+    opacity: 0;
+    transition: all 0.3s ease-in-out; }
+  .closed .search-label {
+    font-family: 'Lato', sans-serif;
+    color: #ccc;
+    font-weight: 300;
+    font-size: 15pt;
+    opacity: 0;
+    transition: all 0.3s ease-in-out; }
 
 .result-panel {
   width: 98%;
@@ -249,3 +363,17 @@ body {
   color: #8f8f8f;
   font-family: 'Lato', sans-serif;
   cursor: text; }
+
+.closed .plus-line {
+  position: absolute;
+  width: 3px;
+  background-color: #cccccc;
+  height: 24px;
+  left: 16px;
+  top: 5px;
+  transition: all 0.2s ease-in-out; }
+  .closed .plus-line:nth-child(1) {
+    transform: rotate(90deg); }
+
+.closed:hover .plus-line {
+  transform: rotate(90deg); }
