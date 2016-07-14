@@ -26,7 +26,7 @@ body {
       flex-direction: column; }
 
 .map-screen {
-  background: url("https://www.advancedcustomfields.com/wp-content/uploads/2013/11/acf-google-maps-field-2.png");
+  background: none;
   -ms-flex-positive: 24;
       flex-grow: 24; }
 

@@ -10,7 +10,7 @@
 <body>
   <div class="background">
     <div class="column">
-      <div class="map-screen"></div>
+      <div class="map-screen" id="map-screen"></div>
       <div class="google">Powered by the <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a></div>
     </div>
     <div class="column">
@@ -37,7 +37,7 @@
         <div class="go">
           <button class="go-button" type="button" name="search">Go</button>
         </div>
-        <div class="results">
+        <div class="results" id="results">
           <div class="result-panel">
             <div class="placename">Place 1:</div>
             <div class="longCo">
@@ -76,6 +76,18 @@
       <div id="built-by" class="google">Built by <b><a href="https://www.andrewhaine.co.uk">Andrew Haine</a></b></div>
     </div>
   </div>
+  <script type="text/javascript">
+  var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map-screen'), {
+    center: {lat: 53.6373011, lng: -2.4214126},
+    zoom: 5
+  });
+}
+  </script>
+  <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0bVdlfbCO3kkNb4obEnchJu8CSSXabcE&callback=initMap">
+   </script>
   <script type="text/javascript" src="/scripts/jquery.min.js"></script>
   <script type="text/javascript" src="/scripts/functions.min.js"></script>
 </body>
