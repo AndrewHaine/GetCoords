@@ -19,76 +19,36 @@
         <div class="inputs">
           <div class="input-outer-first open">
             <label class="search-label" for="place-input">Search</label>
-            <input placeholder="Place Name" type="text" class="place-input" name="place-input">
+            <input id="place_input_0" placeholder="Place Name" type="text" class="place-input" name="place-input">
           </div>
           <div class="input-outer closed">
             <label class="search-label" for="place-input">Search</label>
-            <input placeholder="Place Name" type="text" class="place-input" name="place-input">
+            <input id="place_input_1" placeholder="Place Name" type="text" class="place-input" name="place-input">
             <span class="plus-line"></span>
             <span class="plus-line"></span>
           </div>
           <div class="input-outer closed">
             <label class="search-label" for="place-input">Search</label>
-            <input placeholder="Place Name" type="text" class="place-input" name="place-input">
+            <input id="place_input_2" placeholder="Place Name" type="text" class="place-input" name="place-input">
             <span class="plus-line"></span>
             <span class="plus-line"></span>
           </div>
         </div>
         <div class="go">
-          <button class="go-button" type="button" name="search">Go</button>
+          <button id="button" class="go-button" type="button" name="search">Go</button>
         </div>
         <div class="results" id="results">
-          <div class="result-panel">
-            <div class="placename">Place 1:</div>
-            <div class="longCo">
-              <label for="LongCoIn">Longnitudinal:</label>
-              <input class="CoDisplay" value="52.439" readonly type="text" name="LongCoIn">
-            </div>
-            <div class="latCo">
-              <label for="LatCoIn">Latitudinal:</label>
-              <input class="CoDisplay" value="0.661" readonly type="text" name="LongCoIn">
-            </div>
-          </div>
-          <div class="result-panel">
-            <div class="placename">Place 1:</div>
-            <div class="longCo">
-              <label for="LongCoIn">Longnitudinal:</label>
-              <input class="CoDisplay" value="52.439" readonly type="text" name="LongCoIn">
-            </div>
-            <div class="latCo">
-              <label for="LatCoIn">Latitudinal:</label>
-              <input class="CoDisplay" value="0.661" readonly type="text" name="LongCoIn">
-            </div>
-          </div>
-          <div class="result-panel">
-            <div class="placename">Place 1:</div>
-            <div class="longCo">
-              <label for="LongCoIn">Longnitudinal:</label>
-              <input class="CoDisplay" value="52.439" readonly type="text" name="LongCoIn">
-            </div>
-            <div class="latCo">
-              <label for="LatCoIn">Latitudinal:</label>
-              <input class="CoDisplay" value="0.661" readonly type="text" name="LongCoIn">
-            </div>
-          </div>
+  
         </div>
       </div>
       <div id="built-by" class="google">Built by <b><a href="https://www.andrewhaine.co.uk">Andrew Haine</a></b></div>
     </div>
   </div>
-  <script type="text/javascript">
-  var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map-screen'), {
-    center: {lat: 53.6373011, lng: -2.4214126},
-    zoom: 5
-  });
-}
-  </script>
+  <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/functions.min.js"></script>
   <script async defer
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0bVdlfbCO3kkNb4obEnchJu8CSSXabcE&callback=initMap">
    </script>
-  <script type="text/javascript" src="/scripts/jquery.min.js"></script>
-  <script type="text/javascript" src="/scripts/functions.min.js"></script>
+
 </body>
 </html>
