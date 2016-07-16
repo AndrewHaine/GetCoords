@@ -16,6 +16,17 @@ $(document).ready(function() {
 //Map Work
 
 
+
+var map;
+function initMap() {
+  var myLatLng = {lat: -43.544, lng: 43.75};
+
+  map = new google.maps.Map(document.getElementById('map-screen'), {
+    center: myLatLng,
+    zoom: 5
+  });
+}
+var geocoder;
 $('#button').on('click', function(){
   var places = new Array();
 
@@ -28,19 +39,23 @@ $('#button').on('click', function(){
     };
   };
   for (var place in places) {
-    $('#results').append('<div class="result-panel"><div class="placename">'+ places[place] + '</div><div class="longCo"><label for="LongCoIn">Longnitudinal:</label><input class="CoDisplay" value="52.439" readonly type="text" name="LongCoIn"></div><div class="latCo"><label for="LatCoIn">Latitudinal:</label><input class="CoDisplay" value="0.661" readonly type="text" name="LongCoIn"></div></div>');
+    geocoder = new google.maps.Geocoder();
+    var placeStr = places[place];
+    geocoder.geocode({address: placeStr}, function(results, status){
+      if (status === google.maps.GeocoderStatus.OK){
+        //console.log('Coolio');
+        console.log(results[0].formatted_address+ ':');
+        console.log('Latitude: ' + results[0].geometry.location.lat());
+        console.log('Longitude: ' + results[0].geometry.location.lng());
+        var placeLat = results[0].geometry.location.lat().toFixed(4);
+        var placeLng = results[0].geometry.location.lng().toFixed(4);
+        var properName = results[0].formatted_address;
+        $('#results').append('<div class="result-panel"><div class="placename">'+ properName + '</div><div class="longCo"><label for="LongCoIn">Longnitudinal:</label><input class="CoDisplay" value="'+placeLng+'" readonly type="text" name="LongCoIn"></div><div class="latCo"><label for="LatCoIn">Latitudinal:</label><input class="CoDisplay" value="'+placeLat+'" readonly type="text" name="LongCoIn"></div></div>');
+      } else {
+        console.log('Not Coolio');
+        console.log(status);
+      }
+    })
   }
   console.log(places);
 });
-
-
-
-var map;
-function initMap() {
-  var myLatLng = {lat: -43.544, lng: 43.75};
-
-  map = new google.maps.Map(document.getElementById('map-screen'), {
-    center: myLatLng,
-    zoom: 5
-  });
-}
