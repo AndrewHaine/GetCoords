@@ -19,24 +19,34 @@ $(document).ready(function() {
 
 //Map Work
 
-
-
+var myLatLng;
+var marker;
 var map;
-var myLatLng = {lat: -43.544, lng: 43.75};
+var bounds;
+function addMarker(location, name){
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    title: name,
+    animation: google.maps.Animation.DROP
+  });
+};
+function panMap(center){
+  map.panTo(center);
+};
+myLatLng = {lat: 52.3555, lng: -1.1743};
 function initMap() {
-
-
   map = new google.maps.Map(document.getElementById('map-screen'), {
     center: myLatLng,
-    zoom: 5
+    zoom: 5,
+    disableDefaultUI: false
   });
-}
+};
 var geocoder;
 $('#button').on('click', function(){
   var places = new Array();
 
   $('#results').empty();
-
   for (var i = 0; i < 3; i++) {
     var placeValue = document.getElementById('place_input_'+i).value;
     if (placeValue != "") {
@@ -51,12 +61,12 @@ $('#button').on('click', function(){
       if (status === google.maps.GeocoderStatus.OK){
         //console.log('Coolio');
         console.log(results[0].formatted_address+ ':');
-        console.log('Latitude: ' + results[0].geometry.location.lat());
-        console.log('Longitude: ' + results[0].geometry.location.lng());
         var placeLat = results[0].geometry.location.lat().toFixed(4);
         var placeLng = results[0].geometry.location.lng().toFixed(4);
         var properName = results[0].formatted_address;
-        $('#results').append('<div id="result_' +count+ '" class="result-panel"><div class="placename">'+ properName + '</div><div class="longCo"><label for="LongCoIn">Longnitudinal:</label><input class="CoDisplay" value="'+placeLng+'" readonly type="text" name="LongCoIn"></div><div class="latCo"><label for="LatCoIn">Latitudinal:</label><input class="CoDisplay" value="'+placeLat+'" readonly type="text" name="LongCoIn"></div></div>');
+        var myLatLng = {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()};
+        addMarker(myLatLng, properName);
+        $('#results').append('<div id="result_' +count+ '" class="result-panel"><div class="placename">'+ properName + '</div><div class="longCo"><label for="LongCoIn">Longnitudinal:</label><input class="CoDisplay lngCoInput" value="'+placeLng+'" readonly type="text" name="LongCoIn"></div><div class="latCo"><label for="LatCoIn">Latitudinal:</label><input class="CoDisplay latCoInput" value="'+placeLat+'" readonly type="text" name="LongCoIn"></div></div>');
         count++;
         if(count == places.length){
           addSelected();
@@ -70,17 +80,25 @@ $('#button').on('click', function(){
   function addSelected(){
     $('.result-panel:first-child').addClass('selected');
     //console.log('done');
-    //placeLat = $('#result>.latCo>input').value
-    //placeLng = $('.result-panel:first-child>.longCo>input').value
-    //console.log(placeLat);
-    //myLatLng = {lat: placeLat, lng: placeLng};
-    //initMap();
+    placeLat = $('.selected').find('.latCoInput').val();
+    placeLng = $('.selected').find('.lngCoInput').val();
+    placeName = $('.selected').find('.placename').text();
+    intPlaceLat = parseFloat(placeLat);
+    intPlaceLng = parseFloat(placeLng);
+    myLatLng = {lat: intPlaceLat, lng: intPlaceLng};
+    panMap(myLatLng);
+    map.setZoom(10);
+
   };
   console.log(places);
-
 });
 
 $(document).on('click', '.result-panel', function(){
   $('#results').children('div').removeClass('selected');
   $(this).addClass('selected');
+  placeLat = parseFloat($(this).find('.latCoInput').val());
+  placeLng = parseFloat($(this).find('.lngCoInput').val());
+  myLatLng = {lat: placeLat, lng: placeLng};
+  panMap(myLatLng);
+  map.setZoom(10);
 });
