@@ -364,7 +364,7 @@ body {
   font-size: 15pt;
   color: #8f8f8f;
   font-family: 'Lato', sans-serif;
-  cursor: text; }
+  cursor: pointer; }
 
 .closed .plus-line {
   position: absolute;

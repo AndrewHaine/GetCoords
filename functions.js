@@ -96,6 +96,7 @@ $('#button').on('click', function(){
 $(document).on('click', '.result-panel', function(){
   $('#results').children('div').removeClass('selected');
   $(this).addClass('selected');
+  $('#results').scrollTop = $(this).top;
   placeLat = parseFloat($(this).find('.latCoInput').val());
   placeLng = parseFloat($(this).find('.lngCoInput').val());
   myLatLng = {lat: placeLat, lng: placeLng};
