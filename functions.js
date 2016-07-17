@@ -15,7 +15,6 @@ $(document).ready(function() {
   $('.input-outer input').on('click', function(e) {
     e.stopPropagation();
   });
-
 });
 
 //Map Work
@@ -23,8 +22,9 @@ $(document).ready(function() {
 
 
 var map;
+var myLatLng = {lat: -43.544, lng: 43.75};
 function initMap() {
-  var myLatLng = {lat: -43.544, lng: 43.75};
+
 
   map = new google.maps.Map(document.getElementById('map-screen'), {
     center: myLatLng,
@@ -43,6 +43,7 @@ $('#button').on('click', function(){
       places.push(placeValue);
     };
   };
+  count = 0;
   for (var place in places) {
     geocoder = new google.maps.Geocoder();
     var placeStr = places[place];
@@ -55,12 +56,31 @@ $('#button').on('click', function(){
         var placeLat = results[0].geometry.location.lat().toFixed(4);
         var placeLng = results[0].geometry.location.lng().toFixed(4);
         var properName = results[0].formatted_address;
-        $('#results').append('<div class="result-panel"><div class="placename">'+ properName + '</div><div class="longCo"><label for="LongCoIn">Longnitudinal:</label><input class="CoDisplay" value="'+placeLng+'" readonly type="text" name="LongCoIn"></div><div class="latCo"><label for="LatCoIn">Latitudinal:</label><input class="CoDisplay" value="'+placeLat+'" readonly type="text" name="LongCoIn"></div></div>');
+        $('#results').append('<div id="result_' +count+ '" class="result-panel"><div class="placename">'+ properName + '</div><div class="longCo"><label for="LongCoIn">Longnitudinal:</label><input class="CoDisplay" value="'+placeLng+'" readonly type="text" name="LongCoIn"></div><div class="latCo"><label for="LatCoIn">Latitudinal:</label><input class="CoDisplay" value="'+placeLat+'" readonly type="text" name="LongCoIn"></div></div>');
+        count++;
+        if(count == places.length){
+          addSelected();
+        }
       } else {
         console.log('Not Coolio');
         console.log(status);
       }
     })
   }
+  function addSelected(){
+    $('.result-panel:first-child').addClass('selected');
+    //console.log('done');
+    //placeLat = $('#result>.latCo>input').value
+    //placeLng = $('.result-panel:first-child>.longCo>input').value
+    //console.log(placeLat);
+    //myLatLng = {lat: placeLat, lng: placeLng};
+    //initMap();
+  };
   console.log(places);
+
+});
+
+$(document).on('click', '.result-panel', function(){
+  $('#results').children('div').removeClass('selected');
+  $(this).addClass('selected');
 });
