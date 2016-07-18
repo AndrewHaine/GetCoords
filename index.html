@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="/css/styles.min.css">
   <meta name="description" content="GetCoords enables you to find the coordinates of any location around the world">
   <meta name="viewport" content="width = device-width, initial-scale = 1  maximum-scale=1" >
-  <meta http-equiv="keywords" content="Coordinates Maps Location Search Find" />
+  <meta http-equiv="keywords" content="Coordinates Maps Location Search Find">
+  <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favoriteicon.png" type="image/png">
   <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
   <![endif]-->
@@ -27,11 +30,15 @@
 
 </script>
   <div class="background">
-    <div class="column">
+    <div class="mobile-header">
+      <div class="title">Get<b>Coords</b></div>
+      <img class="mobile-header-logo" src="favoriteicon.png" alt="GetCoords logo" />
+    </div>
+    <div class="column" id="map-column">
       <div class="map-screen" id="map-screen"></div>
       <div class="google">Powered by the <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a></div>
     </div>
-    <div class="column">
+    <div class="column" id="other-column">
       <div class="controls">
         <div class="title">Get<b>Coords</b></div>
         <div class="inputs">
