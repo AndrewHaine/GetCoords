@@ -34,12 +34,19 @@ function addMarker(location, name){
 function panMap(center){
   map.panTo(center);
 };
+function screenSize(){
+  if($(window).width() < 400){
+    return true;
+  } else{
+    return false;
+  }
+};
 myLatLng = {lat: 52.3555, lng: -1.1743};
 function initMap() {
   map = new google.maps.Map(document.getElementById('map-screen'), {
     center: myLatLng,
     zoom: 5,
-    disableDefaultUI: false
+    disableDefaultUI: screenSize()
   });
 };
 var geocoder;
@@ -92,10 +99,6 @@ $('#button').on('click', function(){
   };
   console.log(places);
 });
-
-if($(window).width() < 400){
-  map.setDisableDefaultUI = true;
-};
 
 $(document).on('click', '.result-panel', function(){
   $('#results').children('div').removeClass('selected');
