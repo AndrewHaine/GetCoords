@@ -504,4 +504,48 @@ body {
   .closed {
     width: 38px;
     height: 38px;
-    margin-bottom: 0px; } }
+    margin-bottom: 0px; }
+    .closed .plus-line {
+      height: 22px;
+      left: 15px; }
+  .results {
+    display: -ms-flexbox;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 90%;
+    height: 150px;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin-left: 5%;
+    margin-top: 10px; }
+    .results .result-panel {
+      margin: 0 !important;
+      width: 100%;
+      height: 100%;
+      border: 1px #ccc solid;
+      box-shadow: none !important;
+      box-sizing: border-box; }
+      .results .result-panel:hover {
+        transform: none !important; }
+    .results .selected {
+      transform: none !important; }
+    .results .CoDisplay {
+      width: 50%; }
+    .results .latCo label, .results .longCo label {
+      width: 50%; }
+  #built-by {
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        -ms-grid-row-align: center;
+        align-items: center;
+    padding: 20px; } }

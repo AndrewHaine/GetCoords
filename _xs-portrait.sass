@@ -91,3 +91,39 @@ $break-sm: 400px
     width: 38px
     height: 38px
     margin-bottom: 0px
+    .plus-line
+      height: 22px
+      left: 15px
+  .results
+    display: flex
+    overflow-y: hidden
+    overflow-x: scroll
+    width: 90%
+    height: 150px
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-grow: 1
+    flex-direction: column
+    margin-left: 5%
+    margin-top: 10px
+    .result-panel
+      margin: 0 !important
+      width: 100%
+      height: 100%
+      border: 1px #ccc solid
+      box-shadow: none !important
+      box-sizing: border-box
+      &:hover
+        transform: none !important
+    .selected
+      transform: none !important
+    .CoDisplay
+      width: 50%
+    .latCo, .longCo
+      label
+        width: 50%
+  #built-by
+    justify-content: center
+    align-items: center
+    padding: 20px
