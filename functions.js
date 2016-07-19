@@ -93,6 +93,10 @@ $('#button').on('click', function(){
   console.log(places);
 });
 
+if($(window).width() < 400){
+  map.setDisableDefaultUI = true;
+};
+
 $(document).on('click', '.result-panel', function(){
   $('#results').children('div').removeClass('selected');
   $(this).addClass('selected');

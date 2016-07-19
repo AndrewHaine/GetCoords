@@ -9,30 +9,85 @@ $break-sm: 400px
     box-shadow: none
     height: auto
     margin-top: 0
+    position: relative
   .title
     font-size: 20pt
-    width: 100vw
+    display: flex
     //background-color: green
     margin: 0
+    width: 100%
+    justify-content: center
   .mobile-header
     display: flex
+    width: 100vw
     padding: 10px
-    box-shadow: 0px 2px 5px #ccc
+    box-shadow: 0px 0px 30px #666
     //background-color: grey
+    position: fixed
+    z-index: 90
+    background-color: #fefefe
     .mobile-header-logo
       width: 40px
       height: 40px
+      align-self: flex-end
   #map-column
     display: block
     height: 200px
     width: 100vw
-    top: 0
+    top: 60px
+    position: relative
     margin: 0
     .google
       display: none
     .map-screen
       width: 100vw
       height: 100%
+  #other-column
+    position: relative
+    width: 100vw
+    padding: 0
+    margin: 0
+
   .controls
+    position: relative
+    display: flex
+    justify-content: center
     .title
-      display: none
+      opacity: 0
+  .go-button
+    height: 40px
+    width: 130px
+  .go
+    padding-top: 10px
+    padding-bottom: 10px
+    align-items: center
+    justify-content: center
+  .inputs
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+    margin-top: 8px
+  .input-outer.open
+    margin-bottom: 0px
+    height: 38px
+    width: 90%
+    .search-label
+      font-size: 14pt
+    .place-input
+      font-size: 14pt
+      &::placeholder
+        font-size: 14pt
+  .input-outer-first
+    margin-bottom: 0px
+    height: 38px
+    width: 90%
+    .search-label
+      font-size: 14pt
+    .place-input
+      font-size: 14pt
+      &::placeholder
+        font-size: 14pt
+  .closed
+    width: 38px
+    height: 38px
+    margin-bottom: 0px
