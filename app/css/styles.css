@@ -476,33 +476,33 @@ body {
     height: 38px;
     width: 90%; }
     .input-outer.open .search-label {
-      font-size: 14pt; }
+      font-size: 12pt; }
     .input-outer.open .place-input {
-      font-size: 14pt; }
+      font-size: 12pt; }
       .input-outer.open .place-input::-webkit-input-placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
       .input-outer.open .place-input::-moz-placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
       .input-outer.open .place-input:-ms-input-placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
       .input-outer.open .place-input::placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
   .input-outer-first {
     margin-bottom: 0px;
     height: 38px;
     width: 90%; }
     .input-outer-first .search-label {
-      font-size: 14pt; }
+      font-size: 12pt; }
     .input-outer-first .place-input {
-      font-size: 14pt; }
+      font-size: 12pt; }
       .input-outer-first .place-input::-webkit-input-placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
       .input-outer-first .place-input::-moz-placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
       .input-outer-first .place-input:-ms-input-placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
       .input-outer-first .place-input::placeholder {
-        font-size: 14pt; }
+        font-size: 12pt; }
   .closed {
     width: 38px;
     height: 38px;
@@ -536,6 +536,8 @@ body {
       border: 1px #ccc solid;
       box-shadow: none !important;
       box-sizing: border-box; }
+      .results .result-panel .placename {
+        font-size: 15pt; }
       .results .result-panel:hover {
         transform: none !important; }
     .results .selected {
