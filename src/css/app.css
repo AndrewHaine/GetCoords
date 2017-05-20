@@ -1,0 +1,9 @@
+/* ----- Import Font ---- */
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
+/* ---- Delcare all variables ---- */
+* {
+  font-family: 'Oxygen', sans-serif;
+  color: #F4F4F4; }
+
+body {
+  background-color: #1E1B27; }
