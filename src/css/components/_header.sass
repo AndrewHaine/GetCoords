@@ -1,0 +1,29 @@
+// Component: Header  -----------------
+
+header
+  position: relative
+  top: 0
+  width: 100%
+  z-index: 100
+  padding: 10px 0
+  background: $light
+  color: $white
+  text-align: center
+  box-shadow: 0 2px 4px 0 $med
+
+
+@include respond(700px)
+  header
+    padding: 16px 0
+
+    img
+      width: 240px
+
+@include respond(1000px)
+  header
+    padding-left: 5%
+    text-align: left
+
+@include respond(1800px)
+  header
+    padding-left: 3%

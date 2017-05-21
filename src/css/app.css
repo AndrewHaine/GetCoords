@@ -1,9 +1,75 @@
-/* ----- Import Font ---- */
 @import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
-/* ---- Delcare all variables ---- */
 * {
   font-family: 'Oxygen', sans-serif;
-  color: #F4F4F4; }
+  -webkit-font-smoothing: antialiased; }
 
 body {
-  background-color: #1E1B27; }
+  margin: 0;
+  font-size: 15pt;
+  overflow: hidden; }
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 10px 0;
+  background: #2C2836;
+  color: #F4F4F4;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 #25222E; }
+
+@media screen and (min-width: 700px) {
+  header {
+    padding: 16px 0; }
+    header img {
+      width: 240px; } }
+
+@media screen and (min-width: 1000px) {
+  header {
+    padding-left: 5%;
+    text-align: left; } }
+
+@media screen and (min-width: 1800px) {
+  header {
+    padding-left: 3%; } }
+
+.sidebar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #25222E; }
+
+@media screen and (min-width: 1000px) {
+  .sidebar {
+    position: relative;
+    width: 20vw; } }
+
+.search-bar {
+  background: #2C2836;
+  width: 100%; }
+
+input {
+  padding: 6px;
+  font-size: 100%;
+  background-color: #25222E;
+  color: #F4F4F4;
+  border: 0;
+  border-radius: 6px; }
+  input::placeholder {
+    color: #E2E2E2; }
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  background: green;
+  width: 100%; }
+
+@media screen and (min-width: 1000px) {
+  .main {
+    flex-direction: row; } }
+
+.map-outer {
+  width: 100%;
+  height: 100%; }

@@ -1,7 +1,7 @@
-/* ----- Import Font ---- */
+// ----- Import Font ----
 @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700')
 
-/* ---- Delcare all variables ---- */
+// ---- Delcare all variables ----
 $green: #A5F08C
 $light: #2C2836
 $med: #25222E
@@ -9,11 +9,23 @@ $dark: #1E1B27
 $white: #F4F4F4
 $grey: #E2E2E2
 
-
-
 *
   font-family: 'Oxygen', sans-serif
-  color: $white
+  -webkit-font-smoothing: antialiased
 
 body
-  background-color: $dark
+  margin: 0
+  font-size: 15pt
+  overflow: hidden
+
+// Mixin shortcut for min-width
+@mixin respond($minWidth)
+  @media screen and (min-width: $minWidth)
+    @content
+
+// Imports!
+@import './components/header'
+@import './components/side'
+@import './components/search'
+@import './components/main'
+@import './components/map'

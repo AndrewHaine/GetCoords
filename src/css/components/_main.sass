@@ -1,0 +1,12 @@
+// Component: Main app area --------------
+
+.main
+  position: relative
+  display: flex
+  flex-direction: column-reverse
+  background: green
+  width: 100%
+
+@include respond(1000px)
+  .main
+    flex-direction: row
